@@ -1,0 +1,41 @@
+﻿@model IPTOffering.Repository.Models.PackageDetail
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h1>Package Details</h1>
+    <hr />
+        <dl class="row">
+            <dt class="col-sm-3">
+                <label for="TreatmentPackageName">Treatment Package Name</label>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.TreatmentPackageName)
+            </dd>
+            <dt class="col-sm-3">
+                <label for="TestDetails">Test Details</label>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.TestDetails)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Cost)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Cost)
+            </dd>
+            <dt class="col-sm-3">
+                <label for="TreatmentDuration">Treatment Duration</label>
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.TreatmentDuration)
+            </dd>
+        </dl>
+    
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

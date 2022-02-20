@@ -1,0 +1,6 @@
+2. Pass connection string as json file
+3. Validation classes
+4. unit test
+5. Helpers
+8. Logging 
+

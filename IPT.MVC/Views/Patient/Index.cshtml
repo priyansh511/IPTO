@@ -1,0 +1,73 @@
+﻿@model IEnumerable<IPTreatment.Repository.Models.PatientDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Patient Details</h1>
+
+@Html.ActionLink("Add a new Patient","Create")
+<table class="table table-striped">
+    <thead class="table-info">
+        <tr>
+            <th>
+                <label for="Name">Patient Name</label>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ailment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                <label for="TreatmentPackageName">Treatment Package Name</label>
+            </th>
+            <th>
+                <label for="TreatmentCommencementDate">Treatment Commencement Date</label>
+            </th>
+            <th>
+                <label for="Treatment Status">Treatment Status</label>                
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ailment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentPackageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentCommencementDate)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentStatus)
+            </td>
+            <td>
+                @{ if (item.TreatmentStatus == "In-Progress")
+                    {
+                        @Html.ActionLink("Mark as completed ", "MarkAsCompleted", new { id = item.PatientId });
+                        @Html.ActionLink("View Treatment Plan", "ViewTimeTable", new { id = item.PatientId });
+                    }
+                    else if (item.TreatmentStatus == "Not started")
+                    {
+                        @Html.ActionLink("Formulate Time-table", "FormulateTimetable", new { id = item.PatientId });
+                    }
+
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

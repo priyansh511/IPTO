@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section styles{
+    <link rel="Stylesheet" href="@Href("~/lib/mycss.css")" />
+
+    
+}
+
+
+<div class="text-center wel">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div class="table1 ">
+    <a class="font-weight-bold" asp-action="Index" asp-controller="IPTO"> IP Treatment Packages </a>
+    <br />
+    <a class="font-weight-bold" asp-action="Index" asp-controller="Patient"> Registered Patients </a>
+    <br />
+    <a class="font-weight-bold" asp-action="Index" asp-controller="InsurerDetail"> Insurers </a>
+    <br />
+    <a class="font-weight-bold" asp-action="Index" asp-controller="InitiateClaim"> All Claims </a>
+    <br />
+</div>

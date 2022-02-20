@@ -1,0 +1,72 @@
+﻿@model IPTreatment.Repository.Models.TreatmentPlan
+
+@{
+    ViewData["Title"] = "ViewTimeTable";
+}
+
+
+<div>
+    <h1>Treatment Plan</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            <label for="PatientId">Patient Id</label>
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.PatientId)
+        </dd>
+        <dt class="col-sm-3">
+            <label>Patient Name</label>
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.PatientDetail.Name)
+        </dd>
+        <dt class="col-sm-3">
+            <label for="PackageName">Package Name</label>
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.PackageName)
+        </dd>
+        <dt class="col-sm-3">
+            <label for="TestDetails">Test Details</label>
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TestDetails)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+        <dt class="col-sm-3">
+            <label for="TreatmentCommencementDate">Treatment Commencement Date</label>
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TreatmentCommencementDate)
+        </dd>
+        <dt class="col-sm-3">
+            <label for="TreatmentEndDate">Treatment End Date</label>
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.TreatmentEndDate)
+        </dd>
+        <dt class="col-sm-3">
+            <label for="SpecialistId">Specialist Id</label>
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.SpecialistId)
+        </dd>
+        <dt class="col-sm-3">
+            <label>Specialist Name</label>
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.SpecialistDetail.Name)
+        </dd>
+
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

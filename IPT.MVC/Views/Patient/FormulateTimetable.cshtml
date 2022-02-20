@@ -1,0 +1,56 @@
+﻿@model IPTreatment.Repository.Models.PatientDetail
+
+<div>
+    <h4>Patient Detail</h4>
+    <br />
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-3">
+            <label for="Name">Patient Name</label>
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Ailment)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Ailment)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-3">
+            <label for="TreatmentPackageName">Treatment Package Name</label>
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.TreatmentPackageName)
+        </dd>
+        <dt class="col-sm-3">
+            <label for="TreatmentCommencementDate">Treatment Commencement Date</label>
+         </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.TreatmentCommencementDate)
+        </dd>
+        <dt class="col-sm-3">
+            <label for="TreatmentStatus">Treatment Status</label>
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.TreatmentStatus)
+        </dd>
+    </dl>
+</div>
+<br />
+<form asp-action="FormulateTimetable">
+    @Html.HiddenFor(model => model.PatientId)
+    <h4>Do you want to formulate timetable for this patient?</h4>
+    <br />
+    <input type="submit" value="Yes" class="btn-info"/>
+</form>
+<br />
+<div>
+    <a asp-action="Index">No? Back to list</a>
+</div>

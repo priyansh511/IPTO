@@ -1,0 +1,50 @@
+﻿@model IEnumerable<IPTOffering.Repository.Models.IPTreatmentPackage>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@section styles{
+    <link rel="Stylesheet" href="@Href("~/lib/mycss.css")" />
+}*@
+@*<style>
+body { background-image: url("https://mail.google.com/mail/u/0?ui=2&ik=23b6a5b145&attid=0.1&permmsgid=msg-f:1717311534211053574&th=17d51dbddd54b806&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8w40Np8vG2k7tdabMEk5szNBD_44EBpoXgG6epXtPy1jWKVI8Axuz2hPrFtC_uwmE3ogRs82C4pG8N5mSlDLCz5dviint5pSelNtcdKnpIUcRNLQWFgFeHrIg&disp=emb&realattid=ii_kwdhjwgl0");
+       
+       height: 100%; background-position: center; background-repeat: repeat-x; background-size: cover; }
+</style>*@
+
+    <h1>IP Treatment Packages</h1>
+<br>
+<br>
+
+    <table class="table table-striped">
+        <thead class="table-info">
+            <tr >
+                <th >
+                    @Html.DisplayNameFor(model => model.Ailment)
+                </th>
+                <th>
+                    <label>Treatment Package Name</label>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr >
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ailment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PackageDetail.TreatmentPackageName)
+                    </td>
+                    <td>
+
+                        @Html.ActionLink("Details", "Details", "IPTO", new { id = item.IPTreatmentPackagesId })
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

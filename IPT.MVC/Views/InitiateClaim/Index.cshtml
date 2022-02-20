@@ -1,0 +1,68 @@
+﻿@model IEnumerable<InsuranceClaimRepository.Models.InitiateClaim>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Insurance Claims</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table table-striped">
+    <thead class="table-info">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientDetail.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientDetail.Ailment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentPlanId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentPlan.PackageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurerDetail.InsurerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientDetail.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientDetail.Ailment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentPlanId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentPlan.PackageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurerDetail.InsurerName)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

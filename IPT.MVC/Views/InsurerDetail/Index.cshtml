@@ -1,0 +1,48 @@
+﻿@model IEnumerable<InsuranceClaimRepository.Models.InsurerDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of Insurers</h1>
+
+<table class="table table-striped">
+    <thead class="table-info">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsurerPackageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InsuranceAmountLimit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisbursementDuration)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurerPackageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InsuranceAmountLimit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisbursementDuration)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
+
+
