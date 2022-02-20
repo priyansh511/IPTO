@@ -1,0 +1,130 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/IPTreatmentPackage/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/IPTOffering/IPTPackages/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/IPTreatmentPackage/{packageName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/IPTOffering/IPTPackages/{packageName}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Specialist/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5000
+        }
+      ],
+      "UpstreamPathTemplate": "/IPTOffering/Specialist/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/InpatientService/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/IPTreatment/InpatientService/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/InpatientService/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/IPTreatment/InpatientService/{id}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Patient/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/IPTreatment/Patient/",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Patient/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/IPTreatment/Patient/{id}"
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/InsurerDetail/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/InsuranceClaim/InsurerDetails/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/InsurerDetail/{packageName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/InsuranceClaim/InsurerDetails/{packageName}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/InitiateClaim/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/InsuranceClaim/InitiateClaim/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Auth/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/AuthService/Auth/"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:9000"
+  }
+}
